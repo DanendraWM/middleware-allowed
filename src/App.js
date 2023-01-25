@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { format } from "date-fns";
 import { id } from "date-fns/locale";
+import telkom from "./components/Telkom.png";
 
 function App() {
   const firstTime = format(new Date(), "HH:mm", { locale: id });
@@ -24,9 +25,17 @@ function App() {
         </div>
       </div>
       <form onSubmit={kirim}>
-        <div className="flex flex-col py-4 space-y-4 justify-center items-center">
-          <div className="card lg:w-2/3 w-4/5 bg-[#6f1d1b] shadow-[0_25px_20px_-20px_rgba(0,0,0,0.5)] rounded-md">
-            <div className="card-body"></div>
+        <div className=" flex flex-col py-4 space-y-4 justify-center items-center">
+          <div className=" lg:w-2/3 w-4/5 bg-[rgb(111,29,27)] shadow-[0_25px_20px_-20px_rgba(0,0,0,0.5)] rounded-md">
+            <div className="flex flex-row w-full justify-between">
+              <img  width={100} height={100} src={telkom} alt="a"></img>
+            <div className=" w-20 h-20 flex flex-col">
+            <div className="bg-white w-10 h-10 my-2"></div>
+            <div className="bg-white w-10 h-10 my-2"></div>
+            <div className="bg-white w-10 h-10 my-2"></div>
+            </div>
+            
+            </div>
           </div>
 
           <div id="header" className="card lg:w-2/3 w-4/5 bg-white shadow-[0_25px_20px_-20px_rgba(0,0,0,0.5)]">
