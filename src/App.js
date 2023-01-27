@@ -18,137 +18,158 @@ function App() {
 
   return (
     <div className=" min-h-screen bg-slate-300 text-black  ">
-      <div className="flex flex-row justify-center w-10 h-10 ">
-        <img src={telkom} className="w-10 h-10"></img>
-        <p>ASSSAASASAS</p>
-      </div>
-
-      <div className=" flex justify-center flex-col items-center py-4 sm:py-25 ">
-        <div className="bg-white lg:w-1/2 w-5/6 h-full shadow-[0_6px_6px_-1px_gray] rounded-sm flex flex-col py-4 items-center rounded-sm	 ">
-          <p className="text-lg sm:text-xl font-semibold p-2">- Middleware Entry Request -</p>
-          <hr className="w-1/4 py-0" />
-          <div className="card lg:w-1/2">
-            <div className=" card-body p-2">
-              <p className="card-title">
-                <span className="text-rose-600">*</span>Nama Pengaju
-              </p>
-              <p className="text-sm">Nama pemohon izin</p>
-              <input
-                className="bg-transparent  text-black border-black focus:outline-none border-b-2"
-                type="text"
-                placeholder="Full Name"
-                aria-label="Full name"
-                required
-                value={nama}
-                onChange={(e) => setNama(e.target.value)}
-              />
+      <form onSubmit={kirim}>
+        <div className=" flex justify-center flex-col items-center py-10 sm:py-25 ">
+          <div className="bg-white lg:w-1/2 w-5/6 h-full shadow-[0_6px_6px_-1px_gray] rounded-lg  flex flex-col py-4 items-center space-y-6">
+            <div className="flex flex-row justify-center  ">
+              <img src={telkom} width={100} height={100} alt="logo"></img>
             </div>
-          </div>
-          <div className="card lg:w-1/2">
-            <div className=" card-body p-2">
-              <p className="card-title">
-                <span className="text-rose-600">*</span>Instansi
-              </p>
-              <input
-                className="bg-transparent  text-black border-black focus:outline-none border-b-2"
-                type="text"
-                placeholder="Full Name"
-                aria-label="Full name"
-                required
-                value={nama}
-                onChange={(e) => setNama(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="card lg:w-1/2">
-            <div className=" card-body p-2">
-              <p className="card-title">
-                <span className="text-rose-600">*</span>Tujuan
-              </p>
-              <input
-                className="bg-transparent  text-black border-black focus:outline-none border-b-2"
-                type="text"
-                placeholder="Full Name"
-                aria-label="Full name"
-                required
-                value={nama}
-                onChange={(e) => setNama(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="card lg:w-1/2">
-            <div className=" card-body p-2">
-              <p className="card-title">
-                <span className="text-rose-600">*</span>Keterangan
-              </p>
-              <input
-                className="bg-transparent  text-black border-black focus:outline-none border-b-2"
-                type="text"
-                placeholder="Full Name"
-                aria-label="Full name"
-                required
-                value={nama}
-                onChange={(e) => setNama(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="card lg:w-1/2">
-            <div className=" card-body p-2 py-4">
-              <p className="card-title">
-                <span className="text-rose-600">*</span>Waktu
-              </p>
-              <p className="text-sm pl-1">Pada tanggal {tanggalNow}</p>
-              <div className="border p-4 space-y-3">
-                <p className="text-sm pl-1">Dari Jam</p>
+            <p className="text-sm font-semibold p-3 ">
+              - Middleware Entry Request -
+            </p>
+            <hr className="w-1/4 py-1 h-5 " />
+            <div className="card lg:w-3/4 w-5/6">
+              <div className=" card-body p-2">
+                <p className="card-title">
+                  <span className="text-rose-600">*</span>Nama Pengaju
+                </p>
+                <p className="text-sm">Nama pemohon izin</p>
                 <input
-                  className="bg-transparent  text-black border-black focus:outline-none border-b-2 w-full"
-                  type="time"
-                  placeholder="waktu"
+                  className="bg-transparent  text-black border-black focus:outline-none border-b-2"
+                  type="text"
+                  placeholder="Full Name"
                   aria-label="Full name"
                   required
-                  readOnly
-                  value={firstTime}
+                  value={nama}
+                  onChange={(e) => setNama(e.target.value)}
                 />
-                <p className="text-sm pl-1">Sampai jam</p>
+              </div>
+            </div>
+            <div className="card lg:w-3/4 w-5/6">
+              <div className=" card-body p-2">
+                <p className="card-title">
+                  <span className="text-rose-600">*</span>Instansi
+                </p>
+                <p className="text-sm">Dari Instansi mana ?</p>
                 <input
-                  className="bg-transparent  text-black border-black focus:outline-none border-b-2 w-full"
-                  type="time"
-                  id="appt"
-                  name="appt"
-                  min={firstTime}
+                  className="bg-transparent  text-black border-black focus:outline-none border-b-2"
+                  type="text"
+                  placeholder="Instansi"
+                  aria-label="Instansi"
                   required
-                  onChange={(e) => setEndT(e.target.value)}
+                  value={instansi}
+                  onChange={(e) => setInstansi(e.target.value)}
                 />
               </div>
             </div>
-          </div>
-          <a
-            href="#my-modal-2"
-            className="btn lg:w-2/3 w-4/5 bg-[#6f1d1b] text-white border-none hover:bg-slate-400 hover:text-slate-800 hover:outline-3 space-y-2"
-          >
-            submit
-          </a>
-          <div className="modal" id="my-modal-2">
-            <div className="modal-box bg-slate-100">
-              <a
-                href="#header"
-                className="btn btn-sm btn-circle absolute right-2 top-2"
-              >
-                ✕
-              </a>
-              <h3 className="font-bold text-lg">Konfirmasi Pengiriman Data</h3>
-              <p className="py-4">
-                Data Sudah Di isi Dengan Kondisi Sadar dan jujur
-              </p>
-              <div className="modal-action">
-                {/* <button className="btn lg:w-2/3 w-4/5 bg-[#6f1d1b] text-white border-none hover:bg-slate-400 hover:text-slate-800 hover:outline-3">
-                  Kirim
-                </button> */}
+            <div className="card lg:w-3/4 w-5/6">
+              <div className=" card-body p-2">
+                <p className="card-title">
+                  <span className="text-rose-600">*</span>Tujuan
+                </p>
+                <p className="text-sm">Tujuan ke Middleware</p>
+                <select
+                  defaultValue={"DEFAULT"}
+                  className="select w-full  rounded-none border-b-2 border-t-0 focus:outline-none border-r-0 border-l-0 border-black divide-y divide-slate-200 bg-transparent"
+                  onChange={(e) => setTujuan(e.target.value)}
+                >
+                  <option value="DEFAULT" disabled>
+                    Berkepentingan untuk...
+                  </option>
+                  <option value="Pemasangan Perangkat">
+                    Pemasangan Perangkat
+                  </option>
+                  <option value="Pengecekan Perangkat">
+                    Pengecekan Perangkat
+                  </option>
+                  <option value="Perawatan Perangkat">
+                    Perawatan Perangkat
+                  </option>
+                  <option value="Pencopotan Perangkat">
+                    Pencopotan Perangkat
+                  </option>
+                </select>
               </div>
             </div>
+            <div className="card lg:w-3/4 w-5/6">
+              <div className=" card-body p-2">
+                <p className="card-title">
+                  <span className="text-rose-600">*</span>Keterangan
+                </p>
+                <p className="text-sm">Keterangan Dari pemohon</p>
+                <input
+                  className="bg-transparent  text-black border-black focus:outline-none border-b-2"
+                  type="text"
+                  placeholder="Keterangan"
+                  aria-label="Keterangan"
+                  required
+                  value={desc}
+                  onChange={(e) => setDesc(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="card lg:w-3/4 w-5/6">
+              <div className=" card-body p-2 py-4">
+                <p className="card-title">
+                  <span className="text-rose-600">*</span>Waktu
+                </p>
+                <p className="text-sm pl-1">Pada tanggal {tanggalNow}</p>
+                <div className="lg:flex lg:space-x-2 lg:space-y-0 space-y-4">
+                  <p className="text-sm w-1/2 lg:m-auto">Dari Jam</p>
+                  <input
+                    className="bg-transparent  text-black border-black focus:outline-none border-b-2 lg:w-full w-3/4"
+                    type="time"
+                    placeholder="waktu"
+                    aria-label="waktu"
+                    required
+                    readOnly
+                    value={firstTime}
+                  />
+                  <p className="text-sm w-1/2 lg:m-auto">Sampai jam</p>
+                  <input
+                    className="bg-transparent  text-black border-black focus:outline-none border-b-2 lg:w-full w-3/4"
+                    type="time"
+                    id="appt"
+                    name="appt"
+                    min={firstTime}
+                    required
+                    onChange={(e) => setEndT(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+            <a
+              href="#modal"
+              className="btn lg:w-2/3 w-4/5 bg-[#6f1d1b] text-white border-none hover:bg-slate-400 hover:text-slate-800 hover:outline-3 space-y-2"
+            >
+              submit
+            </a>
+            <div className="modal" id="modal">
+              <div className="modal-box bg-slate-100">
+                <a
+                  href="#header"
+                  className="btn btn-sm btn-circle absolute right-2 top-2"
+                >
+                  ✕
+                </a>
+                <h3 className="font-bold text-lg">
+                  Konfirmasi Pengiriman Data
+                </h3>
+                <p className="py-4">
+                  Data Sudah Di isi Dengan Kondisi Sadar dan jujur
+                </p>
+                <div className="modal-action">
+                  <button className="btn w-full bg-[#6f1d1b] text-white border-none hover:bg-slate-400 hover:text-slate-800 hover:outline-3">
+                    Kirim
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* © 2022 Copyright: Dari Kita Untuk Kita */}
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
