@@ -19,9 +19,12 @@ function App() {
   return (
     <div className=" min-h-screen bg-slate-300 text-black  ">
       <form onSubmit={kirim}>
-        <div className=" flex justify-center flex-col items-center py-10 sm:py-25 ">
-          <div className="bg-white lg:w-1/2 w-5/6 h-full shadow-[0_6px_6px_-1px_gray] rounded-lg  flex flex-col py-4 items-center space-y-6">
+        <div className=" flex justify-center flex-col items-center m-0 py-10 sm:py-25 ">
+          
+          <div className="card bg-white  lg:w-1/2 w-5/6 h-full shadow-[0_6px_6px_-1px_gray] rounded-lg  flex flex-col py-0 items-center space-y-6">
+            <div className="card absolute bottom-90 w-full h-6 rounded-b-none bg-[#6f1d1b] shadow-[0_25px_20px_-20px_rgba(0,0,0,0.5)] rounded-md"></div>
             <div className="flex flex-row justify-center  ">
+              
               <img src={telkom} width={100} height={100} alt="logo"></img>
             </div>
             <p className="text-sm font-semibold p-3 ">
@@ -134,17 +137,21 @@ function App() {
                     min={firstTime}
                     required
                     onChange={(e) => setEndT(e.target.value)}
-                  />
+                  />  
                 </div>
               </div>
             </div>
             <a
               href="#modal"
-              className="btn lg:w-2/3 w-4/5 bg-[#6f1d1b] text-white border-none hover:bg-slate-400 hover:text-slate-800 hover:outline-3 space-y-2"
-            >
+              className="btn lg:w-2/3 w-4/5 bg-[#887272] text-white border-none hover:bg-slate-400 hover:text-slate-800 hover:outline-3 space-y-2 "
+                  >
               submit
             </a>
-            <div className="modal" id="modal">
+            <div className="card  bottom-90 w-full h-6 rounded-t-none bg-[#6f1d1b] shadow-[0_25px_20px_-20px_rgba(0,0,0,0.5)] rounded-md text-white text-center text-sm ">© 2022 Copyright: Dari Kita Untuk Kita</div>
+            {/* © 2022 Copyright: Dari Kita Untuk Kita */}
+          </div>
+
+            <div className="modal m-0" id="modal">
               <div className="modal-box bg-slate-100">
                 <a
                   href="#header"
@@ -165,9 +172,6 @@ function App() {
                 </div>
               </div>
             </div>
-
-            {/* © 2022 Copyright: Dari Kita Untuk Kita */}
-          </div>
         </div>
       </form>
     </div>
