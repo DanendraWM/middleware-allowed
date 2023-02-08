@@ -146,7 +146,7 @@ function App() {
               submit
             </a>
             <div className="card w-full h-10 justify-center rounded-t-none bg-[#6f1d1b] shadow-[0_25px_20px_-20px_rgba(0,0,0,0.5)] rounded-md text-white text-center ">
-              <p className="text-xs"> © 2022 Copyright: Dari Kita Untuk Kita</p>
+              <p className="text-xs"> © 2023 Copyright: Dari Kita Untuk Kita</p>
             </div>
             {/* © 2022 Copyright: Dari Kita Untuk Kita */}
           </div>
