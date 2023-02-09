@@ -13,7 +13,9 @@ function App() {
   const [endT, setEndT] = useState("");
   const kirim = (e) => {
     e.preventDefault();
+    window.open(`https://api.whatsapp.com/send?phone=6285810388175&text======= *Izin Ke Middleware* ======%0a%0a%0aTanggal : ${tanggalNow}%0aDari Jam : ${firstTime}%0aSampai Jam : ${endT}%0aNama : ${nama}%0ainstansi : ${instansi}%0aTujuan : ${tujuan}%0aKeterangan : ${desc}%0a%0aTerima Kasihh`,'_blank');
     window.location.href = `https://api.whatsapp.com/send?phone=6285156834452&text======= *Izin Ke Middleware* ======%0a%0a%0aTanggal : ${tanggalNow}%0aDari Jam : ${firstTime}%0aSampai Jam : ${endT}%0aNama : ${nama}%0ainstansi : ${instansi}%0aTujuan : ${tujuan}%0aKeterangan : ${desc}%0a%0aTerima Kasih`;
+    
   };
 
   return (
